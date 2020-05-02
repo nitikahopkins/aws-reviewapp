@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Login Here</h2>
+    <label for="input" class="username">Username:</label>
+    <input type="text" id="username" /><br /><br />
+    <label for="input" class="pwd">Password:</label>
+    <input type="text" id="password" /><br /><br />
+    <button id="login" onclick="login()" class="button1">Log In</button>
+
+    <style>
+      .username,
+      .pwd {
+        padding-left: 42%;
+        font-family: "Lato", sans-serif;
+        font-size: x-large;
+      }
+
+      .button1 {
+        background-color: #4c4eaf;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .button1:hover {
+        background-color: rgb(74, 43, 124);
+      }
+    </style>
+
+    <script src="/login.js"></script>
+  </body>
+</html>

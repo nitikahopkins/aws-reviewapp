@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="users.css" />
+  </head>
+  <body>
+    <h1 class="mainheading">Sign-up to write reviews</h1>
+    <label for="input" class="username">Username:</label>
+    <input type="text" id="username" /><br /><br />
+    <label for="input" class="Nusername">New Username:</label>
+    <input type="text" id="newusername" /><br /><br />
+    <label for="input" class="pwd">Password:</label>
+    <input type="text" id="password" /><br /><br />
+    <label for="input" class="email">Email:</label>
+    <input type="text" id="email" /><br /><br />
+    <label for="input" class="state">State:</label>
+    <input type="text" id="state" /><br /><br />
+    <label for="input" class="city">City:</label>
+    <input type="text" id="city" /><br /><br />
+
+    <button onclick="postUser()" class="button1">Create User</button>
+    <button onclick="deleteUser()" class="button2">Delete User</button>
+    <button onclick="getUser()" class="button3">Find User</button>
+    <button onclick="putUser()" class="button4">Update User</button>
+
+    <script>
+      async function postUser() {
+        let un = document.getElementById("username").value;
+        let pw = document.getElementById("password").value;
+        let st = document.getElementById("state").value;
+        let ct = document.getElementById("city").value;
+        let email = document.getElementById("email").value;
+
+        const response = await fetch(
+          `http://localhost:3000/users?username=${un}&email=${email}&state=${st}&password=${pw}&city=${ct}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+          }
+        );
+        console.log(await response.json());
+      }
+
+      async function deleteUser() {
+        let un = document.getElementById("username").value;
+        let pw = document.getElementById("password").value;
+        let st = document.getElementById("state").value;
+        let ct = document.getElementById("city").value;
+        let email = document.getElementById("email").value;
+
+        const response = await fetch(
+          `http://localhost:3000/users?username=` + un,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+          }
+        );
+        console.log(await response.json());
+      }
+
+      async function getUser() {
+        let un = document.getElementById("username").value;
+
+        const response = await fetch(
+          `http://localhost:3000/user?username=` + un,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+          }
+        );
+        console.log(await response.json());
+      }
+
+      async function putUser() {
+        let un = document.getElementById("username").value;
+        let newun = document.getElementById("newusername").value;
+
+        const response = await fetch(
+          `http://localhost:3000/user?username=` + un,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+          }
+        );
+        const myJson = await response.json();
+        const userID = myJson[0].id;
+
+        const responseID = await fetch(
+          `http://localhost:3000/users?username=${newun}&id=${userID}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+          }
+        );
+        console.log(await responseID.json());
+      }
+    </script>
+  </body>
+</html>

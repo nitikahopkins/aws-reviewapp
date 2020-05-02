@@ -1,0 +1,64 @@
+.mainheading {
+  text-align: center;
+  margin-top: 5%;
+  padding-bottom: 50px;
+}
+
+.username,
+.pwd,
+.email,
+.state,
+.city {
+  padding-left: 42%;
+  font-family: "Lato", sans-serif;
+  font-size: x-large;
+}
+
+.Nusername {
+  padding-left: 41%;
+  font-family: "Lato", sans-serif;
+  font-size: x-large;
+}
+
+.button1,
+.button2,
+.button3,
+.button4 {
+  background-color: #4c4eaf;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button1:hover,
+.button2:hover,
+.button3:hover,
+.button4:hover {
+  background-color: rgb(74, 43, 124);
+}
+
+.button1 {
+  margin-left: 700px;
+  margin-top: 50px;
+}
+
+.button4 {
+  margin-right: 350px;
+}
+
+input[type="text"] {
+  border: 2px solid blue;
+  border-radius: 4px;
+  font-family: "Lato", sans-serif;
+  padding: 12px 20px;
+  font-size: large;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
