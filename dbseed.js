@@ -3,9 +3,9 @@ const mysql = require("mysql");
 const { host, user, password } = require("./credentials");
 
 const con = mysql.createConnection({
-  host: "database-2.c5aaevzkfdj2.us-east-2.rds.amazonaws.com",
-  user: "admin",
-  password: "test.wow",
+  host: "",
+  user: "",
+  password: "",
 });
 
 con.connect(function (err) {
